@@ -245,44 +245,44 @@
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>واسط ServiceMessage بیش از یک دلیل برای تغییر دارد. همچنین کلاس Main وظایف متعددی را بر عهده دارد.
+      <td><p>واسط MessageService بیش از یک دلیل برای تغییر دارد. همچنین کلاس Main وظایف متعددی را بر عهده دارد.
       </p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 2</p><p>Open-Close Principle (OCP)</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>TelegramMessageService: اضافه کردن یک کلاس جدید برای ارسال پیام تلگرامی بدون تغییر در کلاس‌های دیگر.<br>Main: استفاده از الگوی Factory برای ایجاد سرویس‌های مختلف پیام‌رسانی که به گسترش بدون تغییر کد کمک می‌کند.</p></td>
+      <td><p>کلاس TelegramMessageService: اضافه کردن یک کلاس جدید برای ارسال پیام تلگرامی بدون تغییر در کلاس‌های دیگر.<br>Main: استفاده از الگوی Factory برای ایجاد سرویس‌های مختلف پیام‌رسانی که به گسترش بدون تغییر کد کمک می‌کند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>هر گونه تغییر در متدهای موجود که ممکن است برای اضافه کردن قابلیت‌های جدید نیاز باشد، می‌تواند باعث نقض OCP شود.</p></td>
+      <td><p>افزودن سرویس پیام رسانی جدید سبب تغییر در واسط MessageService و تمام پیاده سازی های دیگر شد.</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 3</p><p>Liskov Substitution Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>ServiceMessage Interface: تمام سرویس‌های پیام‌رسانی (EmailMessageService، SMSMessageService، TelegramMessageService) به واسط ServiceMessage ارث‌بری می‌کنند و متدهای آن را پیاده‌سازی می‌کنند. این باعث می‌شود که هر کلاس بتواند به جای دیگری استفاده شود بدون این که کارایی سیستم مختل شود.</p></td>
+      <td><p>رابطه بین کلاس MessageService و دیگر پیام ها از همین نوع پیام هستند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>اگر TelegramMessageService به طور کامل متدهای ServiceMessage را پیاده‌سازی نکند یا رفتارهای متفاوتی داشته باشد، این اصل نقض می‌شود.</p></td>
+      <td><p>کلاس MessageService رفتارهای اضافی به فرزندان خود سرایت کرده و بدنه ها خالی است</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 4</p><p>Interface Segregation Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>ServiceMessage Interface: تفکیک متدها به واسط‌های جداگانه برای سرویس‌های مختلف (مانند validatePhoneNumber برای تلگرام) باعث می‌شود که کلاس‌ها تنها متدهایی را پیاده‌سازی کنند که واقعاً نیاز دارند.</p></td>
+      <td><p>کلاس MessageService Interface: تفکیک متدها به واسط‌های جداگانه برای سرویس‌های مختلف (validatePhoneNumber برای تلگرام) باعث می‌شود که کلاس‌ها تنها متدهایی را پیاده‌سازی کنند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>اگر واسط ServiceMessage شامل متدهایی باشد که همه سرویس‌ها به آن نیاز نداشته باشند، این اصل نقض می‌شود. در این صورت باید واسط‌ها را کوچک‌تر و تخصصی‌تر کنیم.</p></td>
+      <td><p>واسط MessageService شامل متدهایی باشد که همه سرویس‌ها به آن نیاز نداشته باشند، این اصل نقض می‌شود. در این صورت باید واسط‌ها را کوچک‌تر و تخصصی‌تر کنیم.</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 5</p><p>Dependency Inversion Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>Main: وابستگی‌های High-level module به واسط ServiceMessage بجای کلاس‌های خاص (مانند EmailMessageService، SMSMessageService) باعث می‌شود که وابستگی‌ها به صورت معکوس و بر اساس Abstraction باشند.</p></td>
+      <td><p>کلاس Main: وابستگی‌های High-level module به واسط MessageService بجای کلاس‌های خاص (EmailMessageService، SMSMessageService) باعث می‌شود که وابستگی‌ها به صورت معکوس و بر اساس Abstraction باشند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>اگر کلاس Main به طور مستقیم به کلاس‌های خاص سرویس پیام‌رسانی وابسته باشد، این اصل نقض می‌شود. باید از تزریق وابستگی یا الگوهایی مانند Factory استفاده کرد تا وابستگی‌ها به واسط‌ها باشند.</p></td>
+      <td><p>کلاس Main به طور مستقیم به کلاس‌های خاص سرویس پیام‌رسانی وابسته باشد، این اصل نقض می‌شود. باید از تزریق وابستگی یا الگوهایی مانند Factory استفاده کرد تا وابستگی‌ها به واسط‌ها باشند.</p></td>
     </tr>
   </tbody>
 </table>
