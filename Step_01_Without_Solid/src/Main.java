@@ -10,8 +10,11 @@ import java.util.Scanner;
 
 public class Main {
     public static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        scanner.useDelimiter("\n");
         System.out.println("Hello and Welcome to SE Lab Messenger.");
+
         int userAnswer=0;
         do{
             Message message = null;
@@ -47,14 +50,14 @@ public class Main {
                     break;
                 case 2:
                     EmailMessage emailMessage = new EmailMessage();
-                    System.out.print("Enter source phone : ");
+                    System.out.print("Enter source email : ");
                     source = scanner.next();
                     emailMessage.setSourceEmailAddress(source);
-                    System.out.print("Enter target phone : ");
+                    System.out.print("Enter target email : ");
                     target = scanner.next();
                     emailMessage.setTargetEmailAddress(target);
                     System.out.println("Write Your Message : ");
-                    content = scanner.next();
+                    content = scanner.next(".*$");
                     emailMessage.setContent(content);
                     message = emailMessage;
                     break;
@@ -67,7 +70,7 @@ public class Main {
                     target = scanner.next();
                     telegramMessage.setTargetPhoneNumber(target);
                     System.out.println("Write Your Message : ");
-                    content = scanner.next();
+                    content = scanner.next(".*$");
                     telegramMessage.setContent(content);
                     message = telegramMessage;
                     break;
