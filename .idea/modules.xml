@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Step_01_Without_Solid/Step_01_Without_Solid.iml" filepath="$PROJECT_DIR$/Step_01_Without_Solid/Step_01_Without_Solid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Step_02_With_Solid/Step_02_With_Solid.iml" filepath="$PROJECT_DIR$/Step_02_With_Solid/Step_02_With_Solid.iml" />
     </modules>
   </component>
 </project>
