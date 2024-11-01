@@ -260,16 +260,16 @@
     <tr>
       <td rowspan="2"><p>اصل 3</p><p>Liskov Substitution Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>رابطه بین کلاس MessageService و دیگر پیام ها از همین نوع پیام هستند.</p></td>
+      <td><p>رابطه بین واسط MessageService و دیگر پیام ها از همین نوع پیام هستند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p>کلاس MessageService رفتارهای اضافی به فرزندان خود سرایت کرده و بدنه ها خالی است</p></td>
+      <td><p>واسط MessageService رفتارهای اضافی به فرزندان خود سرایت کرده و بدنه ها خالی است</p></td>
     </tr>
     <tr>
       <td rowspan="2"><p>اصل 4</p><p>Interface Segregation Principle</p></td>
       <td><p><strong>موارد تحقق</strong></p></td>
-      <td><p>کلاس MessageService Interface: تفکیک متدها به واسط‌های جداگانه برای سرویس‌های مختلف (validatePhoneNumber برای تلگرام) باعث می‌شود که کلاس‌ها تنها متدهایی را پیاده‌سازی کنند.</p></td>
+      <td><p>واسط MessageService تفکیک متدها به واسط‌های جداگانه برای سرویس‌های مختلف (validatePhoneNumber برای تلگرام) باعث می‌شود که کلاس‌ها تنها متدهایی را پیاده‌سازی کنند.</p></td>
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
