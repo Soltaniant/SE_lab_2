@@ -18,7 +18,7 @@ public class Main {
         scanner.useDelimiter("\n");
         System.out.println("Hello and Welcome to SE Lab Messenger.");
 
-        int userAnswer=0;
+        int userAnswer;
         do{
             Message message = null;
             MessageService messageService = null;
