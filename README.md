@@ -245,7 +245,6 @@
     </tr>
     <tr>
       <td><p><strong>موارد نقض</strong></p></td>
-      <td><p><strong>موارد نقض</strong></p></td>
       <td><p>واسط ServiceMessage بیش از یک دلیل برای تغییر دارد. همچنین کلاس Main وظایف متعددی را بر عهده دارد.
       </p></td>
     </tr>
