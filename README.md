@@ -1,4 +1,5 @@
 Messenger
+
 <table dir='rtl'>
 <tbody>
 <tr>
@@ -165,7 +166,6 @@ Messenger
 </td>
 </tr>
 
-
 <tr>
 <td width="64">
 <p><strong>۱۱</strong></p>
@@ -226,6 +226,57 @@ Messenger
 </td>
 </tr>
 
-
 </tbody>
+</table>
+
+Part 3 SOLID PRINCIPLES TABLE
+
+<table dir='rtl'>
+  <tbody>
+    <tr>
+      <td rowspan="2" width="240"><p>اصل 1</p><p>Single Responsibility</p></td>
+      <td width="95"><p><strong>موارد تحقق</strong></p></td>
+      <td width="454"><p>افزودن کلاس‌های جداگانه برای سرویس‌های پیام‌رسانی (EmailMessageService، SMSMessageService، TelegramMessageService) به منظور رعایت مسئولیت واحد هر کلاس.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>اگر یک کلاس چندین مسئولیت داشته باشد، این اصل نقض می‌شود.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 2</p><p>Open-Close Principle (OCP)</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td><p>TelegramMessageService: اضافه کردن یک کلاس جدید برای ارسال پیام تلگرامی بدون تغییر در کلاس‌های دیگر.<br>Main: استفاده از الگوی Factory برای ایجاد سرویس‌های مختلف پیام‌رسانی که به گسترش بدون تغییر کد کمک می‌کند.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>هر گونه تغییر در متدهای موجود که ممکن است برای اضافه کردن قابلیت‌های جدید نیاز باشد، می‌تواند باعث نقض OCP شود.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 3</p><p>Liskov Substitution Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td><p>ServiceMessage Interface: تمام سرویس‌های پیام‌رسانی (EmailMessageService، SMSMessageService، TelegramMessageService) به واسط ServiceMessage ارث‌بری می‌کنند و متدهای آن را پیاده‌سازی می‌کنند. این باعث می‌شود که هر کلاس بتواند به جای دیگری استفاده شود بدون این که کارایی سیستم مختل شود.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>اگر TelegramMessageService به طور کامل متدهای ServiceMessage را پیاده‌سازی نکند یا رفتارهای متفاوتی داشته باشد، این اصل نقض می‌شود.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 4</p><p>Interface Segregation Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td><p>ServiceMessage Interface: تفکیک متدها به واسط‌های جداگانه برای سرویس‌های مختلف (مانند validatePhoneNumber برای تلگرام) باعث می‌شود که کلاس‌ها تنها متدهایی را پیاده‌سازی کنند که واقعاً نیاز دارند.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>اگر واسط ServiceMessage شامل متدهایی باشد که همه سرویس‌ها به آن نیاز نداشته باشند، این اصل نقض می‌شود. در این صورت باید واسط‌ها را کوچک‌تر و تخصصی‌تر کنیم.</p></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><p>اصل 5</p><p>Dependency Inversion Principle</p></td>
+      <td><p><strong>موارد تحقق</strong></p></td>
+      <td><p>Main: وابستگی‌های High-level module به واسط ServiceMessage بجای کلاس‌های خاص (مانند EmailMessageService، SMSMessageService) باعث می‌شود که وابستگی‌ها به صورت معکوس و بر اساس Abstraction باشند.</p></td>
+    </tr>
+    <tr>
+      <td><p><strong>موارد نقض</strong></p></td>
+      <td><p>اگر کلاس Main به طور مستقیم به کلاس‌های خاص سرویس پیام‌رسانی وابسته باشد، این اصل نقض می‌شود. باید از تزریق وابستگی یا الگوهایی مانند Factory استفاده کرد تا وابستگی‌ها به واسط‌ها باشند.</p></td>
+    </tr>
+  </tbody>
 </table>
