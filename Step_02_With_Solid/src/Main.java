@@ -1,12 +1,8 @@
 
-import models.EmailMessage;
-import models.Message;
-import models.SmsMessage;
-import models.TelegramMessage;
-import services.EmailMessageService;
+import models.*;
+import models.factory.AbstractMessageFactory;
+import models.factory.MessageFactoryImpl;
 import services.MessageService;
-import services.SmsMessageService;
-import services.TelegramMessageService;
 
 import java.util.Scanner;
 
@@ -19,9 +15,9 @@ public class Main {
         System.out.println("Hello and Welcome to SE Lab Messenger.");
 
         int userAnswer;
-        do{
-            Message message = null;
-            MessageService messageService = null;
+        do {
+            Message message;
+            MessageService messageService;
 
             String source;
             String target;
@@ -34,37 +30,27 @@ public class Main {
 
             userAnswer= scanner.nextInt();
 
-            if(userAnswer==0){
+            if(userAnswer==0)
                 break;
-            }
 
-            switch (userAnswer){
-                case 1:
-                    message = new SmsMessage();
-                    messageService = new SmsMessageService();
-                    break;
-                case 2:
-                    message = new EmailMessage();
-                    messageService = new EmailMessageService();
-                    break;
-                case 3:
-                    message = new TelegramMessage();
-                    messageService = new TelegramMessageService();
-                    break;
-            }
+            MessageType messageType = MessageType.fromOrdinal(userAnswer);
+            AbstractMessageFactory factory = new MessageFactoryImpl();
 
-            System.out.print("Enter source phone : ");
+            message = factory.createMessage(messageType);
+            messageService = factory.createMessageService(messageType);
+
+            System.out.printf("Enter source [%s]: ", messageType);
             source = scanner.next();
             message.setSource(source);
-            System.out.print("Enter target phone : ");
+            System.out.printf("Enter target [%s]: ", messageType);
             target = scanner.next();
             message.setTarget(target);
-            System.out.println("Write Your Message : ");
+            System.out.println("Write Your Message: ");
             content = scanner.next(".*$");
             message.setContent(content);
 
             messageService.sendMessage(message);
 
-        }while (true);
+        } while (true);
     }
 }

@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="803102d8-6f6c-4ad0-abfb-a954df13983a" name="Changes" comment="fix a problem with input scanner">
-      <change afterPath="$PROJECT_DIR$/Step_02_With_Solid/Step_02_With_Solid.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Step_02_With_Solid/src/models/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Step_02_With_Solid/src/models/factory/AbstractMessageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Step_02_With_Solid/src/models/factory/MessageFactoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="803102d8-6f6c-4ad0-abfb-a954df13983a" name="Changes" comment="use factory methods">
+      <change beforePath="$PROJECT_DIR$/Step_02_With_Solid/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Step_02_With_Solid/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +34,27 @@
     &quot;assignee&quot;: &quot;Soltaniant&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Soltaniant/SE_lab_2.git&quot;,
-    &quot;accountId&quot;: &quot;4401087b-ce09-47a1-8144-e904bc12cb37&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Soltaniant/SE_lab_2.git",
+    "accountId": "4401087b-ce09-47a1-8144-e904bc12cb37"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
+    },
+    "owner": "Soltaniant",
+    "repository": "SE_lab_2"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -69,7 +76,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "redesign",
+    "git-widget-placeholder": "#3 on redesign",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/sajad/IdeaProjects/SE_lab_2/Step_02_With_Solid",
     "node.js.detected.package.eslint": "true",
@@ -120,6 +127,9 @@
       <list>
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +151,55 @@
       <option name="project" value="LOCAL" />
       <updated>1730449454385</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init steps-02">
+      <option name="closed" value="true" />
+      <created>1730466476441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730466476441</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init steps-02">
+      <option name="closed" value="true" />
+      <created>1730466567983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730466567983</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init steps-02">
+      <option name="closed" value="true" />
+      <created>1730466581516</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730466581516</updated>
+    </task>
+    <task id="LOCAL-00005" summary="init steps-02">
+      <option name="closed" value="true" />
+      <created>1730466595970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730466595970</updated>
+    </task>
+    <task id="LOCAL-00006" summary="use factory methods">
+      <option name="closed" value="true" />
+      <created>1730469390202</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730469390202</updated>
+    </task>
+    <task id="LOCAL-00007" summary="use factory methods">
+      <option name="closed" value="true" />
+      <created>1730469913162</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730469913162</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +207,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix a problem with input scanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix a problem with input scanner" />
+    <MESSAGE value="init steps-02" />
+    <MESSAGE value="use factory methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="use factory methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
